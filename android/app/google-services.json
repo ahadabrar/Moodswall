@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "507576412877",
+    "project_id": "moodswall-ff79f",
+    "storage_bucket": "moodswall-ff79f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507576412877:android:84c31c8a9b19544e195784",
+        "android_client_info": {
+          "package_name": "com.xz.moodwalls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507576412877-i1ocm1a9k0rin87gat53ub7dhtvf8p92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC53JV-UlXRcqaYL2LhcxrYaagLO5IKb7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507576412877-i1ocm1a9k0rin87gat53ub7dhtvf8p92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

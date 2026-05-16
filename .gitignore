@@ -1,0 +1,60 @@
+# Flutter-related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Android-related
+**/android/**/generated/
+**/android/gen/
+**/android/out/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+.gradle/
+local.properties
+*.keystore
+*.jks
+*.properties
+!/android/key.properties
+
+# iOS-related
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/App.framework
+**/ios/Flutter/App.podspec
+**/ios/Flutter/engine_download_config.sh
+**/ios/Flutter/Frameworks
+**/ios/.generated/
+**/ios/Pods/
+**/ios/Runner.xcworkspace
+**/ios/Runner.xcodeproj/project.xcworkspace
+**/ios/Runner.xcodeproj/xcuserdata/
+**/ios/Runner/GeneratedPluginRegistrant.h
+**/ios/Runner/GeneratedPluginRegistrant.m
+**/ios/.last_build_id
+**/ios/Flutter/.last_build_id
+
+# IntelliJ-related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code-related
+.vscode/
+
+# Web-related
+.web/
+
+# Miscellaneous
+.DS_Store
+.history
+*.log
+*.swp
+auth_service.dart.bak
+refactor.dart
+refactor.dart.bak
+MOODWALLS_PROJECT_PROPOSAL.txt

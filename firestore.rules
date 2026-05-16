@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Master Admin check based on email or existing admin record
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email == 'moodswalladmin@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // User profiles and sub-collections
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      // Allow user to create own record OR Admin to create records for users
+      allow create: if isOwner(userId) || isAdmin();
+      allow update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+
+      match /mood_wallpapers/{docId} {
+        allow read: if isAuthenticated();
+        allow write: if isOwner(userId) || isAdmin();
+      }
+      
+      match /mood_history/{docId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow write: if isOwner(userId) || isAdmin();
+      }
+    }
+
+    // Community Mood Feed
+    match /public_feed/{docId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated(); // Anyone can post their mood
+      allow update, delete: if isAdmin();
+    }
+
+    // Admin records
+    match /admins/{adminId} {
+      allow read: if isOwner(adminId) || isAdmin();
+      allow write: if request.auth.token.email == 'moodswalladmin@gmail.com' || isAdmin();
+    }
+
+    // Public/Shared Wallpapers
+    match /wallpapers/{document=**} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated(); // Allow users to cache API wallpapers when favoriting
+      allow update, delete: if isAdmin();
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
