@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "507576412877-n1t2t1gi4c0pp2s8absbi7b2522i30si.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xz.moodwalls",
+            "certificate_hash": "44bd4135fb5fafbe2f3cca2f89bb7f6cf22508da"
+          }
+        },
+        {
           "client_id": "507576412877-i1ocm1a9k0rin87gat53ub7dhtvf8p92.apps.googleusercontent.com",
           "client_type": 3
         }
