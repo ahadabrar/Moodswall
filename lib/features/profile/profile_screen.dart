@@ -1,3 +1,4 @@
+// user profile screen to see email change photo and set preferred mood
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

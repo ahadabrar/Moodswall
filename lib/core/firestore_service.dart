@@ -1,3 +1,4 @@
+// does all the firebase firestore database operations like saving favorites and moods
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -8,12 +9,12 @@ class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   String _getUserCollection(String uid) {
-    // This is a bit tricky if we only have the UID. 
-    // Usually we'd check Auth, but FirestoreService should be independent.
-    // However, since we know moodswalladmin@gmail.com is our only admin, 
-    // and its UID will be constant for that email in Firebase Auth,
-    // we can either check Auth current user or just let it fail if wrong.
-    // Better: pass the collection name or check Auth here.
+    // this is tricky if we only have the uid
+    // firestore service should be independent
+    // we know the admin email is moodswalladmin at gmail
+    // and its uid will be constant
+    // check auth or let it fail
+    // pass collection name or check auth
     final user = FirebaseAuth.instance.currentUser;
     if (user != null && (user.email ?? '').toLowerCase() == 'moodswalladmin@gmail.com') {
       return 'admins';
@@ -204,7 +205,7 @@ class FirestoreService {
 
   Future<void> deleteUser(String uid) async {
     try {
-      // Attempt to delete from both collections to be safe
+      // delete from both collections to be safe
       await _db.collection('users').doc(uid).delete();
       await _db.collection('admins').doc(uid).delete();
     } catch (e) {
@@ -252,7 +253,7 @@ class FirestoreService {
       'timestamp': FieldValue.serverTimestamp(),
     });
 
-    // Also add to public feed
+    // also add to public feed
     await _db.collection('public_feed').add({
       'mood': mood,
       'timestamp': FieldValue.serverTimestamp(),

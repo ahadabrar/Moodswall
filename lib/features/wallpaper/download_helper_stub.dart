@@ -1,3 +1,4 @@
+// fallback helper for saving images on unknown platforms
 import 'package:moodwalls/features/wallpaper/download_result.dart';
 export 'download_result.dart';
 

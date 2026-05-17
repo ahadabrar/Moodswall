@@ -1,3 +1,4 @@
+// screen for admins to manage users and delete them from the app
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';

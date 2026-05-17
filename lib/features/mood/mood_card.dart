@@ -1,3 +1,4 @@
+// small clickable widget that displays a mood emoji and text
 import 'package:flutter/material.dart';
 
 class MoodCard extends StatelessWidget {

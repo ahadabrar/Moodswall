@@ -1,3 +1,4 @@
+// has validation functions to check if emails passwords and urls are correct
 class Validators {
   static String? email(String? value) {
     if (value == null || value.trim().isEmpty) return 'Email is required';

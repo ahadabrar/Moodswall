@@ -1,3 +1,4 @@
+// keeps track of the logged in user state and handles signup login and logout
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -32,7 +33,7 @@ class AuthProvider with ChangeNotifier {
   void _fetchUserData(String uid) {
     _userSubscription?.cancel();
 
-    // Determine collection based on current user email
+    // check collection based on user email
     final email = (_firebaseUser?.email ?? '').toLowerCase();
     final collection = email == 'moodswalladmin@gmail.com' ? 'admins' : 'users';
 

@@ -1,3 +1,4 @@
+// downloads images directly from the web browser to the computer
 import 'dart:js_interop';
 import 'package:flutter/foundation.dart';
 import 'package:web/web.dart' as web;
@@ -7,7 +8,7 @@ export 'download_result.dart';
 
 Future<DownloadResult> downloadImage(String imageUrl, String filename) async {
   try {
-    // Add error handling for web platform HTTP requests
+    // add web error handling
     final response = await http.get(Uri.parse(imageUrl)).timeout(
       const Duration(seconds: 15),
       onTimeout: () {

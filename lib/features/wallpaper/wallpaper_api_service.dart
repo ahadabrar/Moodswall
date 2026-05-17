@@ -1,3 +1,4 @@
+// connects to pexels api to search and fetch wallpaper images
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
@@ -124,7 +125,7 @@ class WallpaperApiService {
   }
 
   static Future<List<WallpaperModel>> fetchWallpapers(String mood, {int perPage = 30}) async {
-    // Skip HTTP calls on web platform due to CORS restrictions
+    // skip http calls on web because of cors
     if (!kIsWeb) {
       try {
         final wallpapers = await fetchWallpapersFromUnsplash(mood, perPage: perPage);

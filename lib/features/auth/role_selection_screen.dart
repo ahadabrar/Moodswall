@@ -1,3 +1,4 @@
+// simple screen to choose whether to log in as user or admin
 import 'package:flutter/material.dart';
 
 class RoleSelectionScreen extends StatelessWidget {

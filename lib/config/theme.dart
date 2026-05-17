@@ -1,3 +1,4 @@
+// here we define all the pastel colors and how buttons and inputs look
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

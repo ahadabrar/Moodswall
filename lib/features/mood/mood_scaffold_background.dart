@@ -1,3 +1,4 @@
+// displays a full screen gradient background that matches the active mood
 import 'package:flutter/material.dart';
 import 'package:moodwalls/features/mood/mood_theme_provider.dart';
 

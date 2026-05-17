@@ -1,3 +1,4 @@
+// returns a nice positive affirmation phrase based on current mood
 import 'dart:math';
 
 class AffirmationService {

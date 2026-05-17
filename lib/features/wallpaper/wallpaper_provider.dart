@@ -1,3 +1,4 @@
+// manages wallpaper search loading caching and toggle favorites
 import 'package:flutter/material.dart';
 import 'package:moodwalls/features/wallpaper/wallpaper_model.dart';
 import 'package:moodwalls/core/firestore_service.dart';
@@ -27,7 +28,7 @@ class WallpaperProvider with ChangeNotifier {
 
       List<WallpaperModel> suggested = await _firestoreService.getWallpapersByMood(mood);
       
-      // If we have very few wallpapers in cache, fetch more from the API to fill it up
+      // if we have very few wallpapers in cache we get more from the api
       if (suggested.length < 15) {
         debugPrint('Cache low (${suggested.length}), fetching more from API for mood: $mood');
         final apiWallpapers = await WallpaperApiService.fetchWallpapers(mood, perPage: 20);
@@ -36,7 +37,7 @@ class WallpaperProvider with ChangeNotifier {
           await _firestoreService.cacheWallpaper(w);
         }
         
-        // Re-fetch from firestore to get the updated list
+        // get the updated list from firestore
         suggested = await _firestoreService.getWallpapersByMood(mood);
       }
       _suggestedWallpapers = suggested;

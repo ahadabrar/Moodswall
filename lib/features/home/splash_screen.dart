@@ -1,3 +1,4 @@
+// opening screen that routes the user based on login state
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';

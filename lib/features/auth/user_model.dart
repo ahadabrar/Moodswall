@@ -1,3 +1,4 @@
+// user model to hold info like email username and favorites
 class UserModel {
   final String uid;
   final String email;

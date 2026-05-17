@@ -1,3 +1,4 @@
+// screen displaying user daily mood history and stats
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
@@ -77,7 +78,7 @@ class _MoodHistoryScreenState extends State<MoodHistoryScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Diary saved successfully!')),
       );
-      _fetchHistory(); // Refresh the list
+      _fetchHistory(); // refresh the list
     }
   }
 
@@ -100,7 +101,7 @@ class _MoodHistoryScreenState extends State<MoodHistoryScreen> {
   Widget build(BuildContext context) {
     final sortedKeys = _history.keys.toList()..sort((a, b) => b.compareTo(a));
     
-    // Simple Analytics: Count most frequent mood
+    // count the most frequent mood
     String mostFrequentMood = 'N/A';
     if (_history.isNotEmpty) {
       final counts = <String, int>{};
@@ -135,7 +136,7 @@ class _MoodHistoryScreenState extends State<MoodHistoryScreen> {
                 )
               : Column(
                   children: [
-                    // Mood Trend Card
+                    // mood trend card
                     Container(
                       margin: const EdgeInsets.all(16),
                       padding: const EdgeInsets.all(20),

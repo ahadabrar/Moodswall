@@ -1,3 +1,4 @@
+// model to represent a single wallpaper with its id url mood and tags
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class WallpaperModel {

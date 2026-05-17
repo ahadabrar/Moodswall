@@ -1,3 +1,4 @@
+// a custom text field that can hide or show password characters
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {

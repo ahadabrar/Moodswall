@@ -1,3 +1,4 @@
+// a custom button widget that handles loading state with a spinner
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {

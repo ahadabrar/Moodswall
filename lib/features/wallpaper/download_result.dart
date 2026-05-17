@@ -1,3 +1,4 @@
+// stores the result and success state of an image download
 
 class DownloadResult {
   final bool success;

@@ -1,3 +1,4 @@
+// lets users add their own custom wallpaper urls and manage them
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

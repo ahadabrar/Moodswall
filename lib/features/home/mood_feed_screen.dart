@@ -1,3 +1,4 @@
+// shows a live feed of what moods other people are feeling
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:moodwalls/core/firestore_service.dart';

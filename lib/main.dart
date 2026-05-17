@@ -1,3 +1,4 @@
+// this is the main entry point where the app starts up and loads all providers
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -22,11 +23,11 @@ import 'package:moodwalls/features/mood/mood_history_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Global Flutter error handler
+  // global error handler
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     debugPrint('Flutter Error: ${details.exception}');
-    // Handle web platform specific errors gracefully
+    // handle web specific errors gracefully
     if (details.exception.toString().contains('doHttp') || 
         details.exception.toString().contains('unsupported operation')) {
       debugPrint('Web platform HTTP error detected - this is expected on web platform');

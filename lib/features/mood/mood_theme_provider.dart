@@ -1,3 +1,4 @@
+// manages mood presets emojis color gradients and theme states
 import 'package:flutter/material.dart';
 
 class MoodThemeConfig {

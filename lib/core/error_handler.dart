@@ -1,3 +1,4 @@
+// runs actions safely and catches firebase auth errors
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

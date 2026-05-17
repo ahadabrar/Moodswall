@@ -1,3 +1,4 @@
+// main home page where you choose your mood and see affirmations
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -156,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(fontSize: 16, color: Colors.black54),
                         ),
                         const SizedBox(height: 20),
-                        // Affirmation Card
+                        // affirmation card
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(20),

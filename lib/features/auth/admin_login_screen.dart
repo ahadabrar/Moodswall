@@ -1,3 +1,4 @@
+// separate login page for the admin with email checks
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
@@ -20,7 +21,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
   @override
   void initState() {
     super.initState();
-    // Explicitly clear any potentially autofilled credentials on load
+    // clear autofilled credentials on load
     _emailController.clear();
     _passwordController.clear();
   }
@@ -44,9 +45,9 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       await authProvider.login(email, password);
       
-      // Wait a moment for the user data to be fetched by the provider
-      // If the user document doesn't exist in the 'admins' collection, access will be denied by the UI check
-      // But we can also check it explicitly here for better UX
+      // wait for user data to be fetched
+      // if user is not admin then access is denied
+      // check explicitly here for better ux
       
       if (!mounted) return;
       Navigator.pushReplacementNamed(context, '/home');
@@ -112,7 +113,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                   enableSuggestions: false,
                   autocorrect: false,
-                  autofillHints: const [], // Disable autofill hints
+                  autofillHints: const [], // disable autofill hints
                 ),
                 const SizedBox(height: 20),
                 CustomTextField(
@@ -122,7 +123,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                   isPassword: true,
                   enableSuggestions: false,
                   autocorrect: false,
-                  autofillHints: const [], // Disable autofill hints
+                  autofillHints: const [], // disable autofill hints
                 ),
                 const SizedBox(height: 20),
                 Row(

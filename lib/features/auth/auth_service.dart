@@ -1,3 +1,4 @@
+// direct backend authentication calls to firebase auth and google sign in
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -130,8 +131,8 @@ class AuthService {
   }
 
   Future<User?> adminCreateUser(String email, String password, String username) async {
-    // To create a user without logging out the current admin, 
-    // we must use a secondary Firebase app instance.
+    // create user without logging out current admin
+    // we need a secondary firebase app instance
     FirebaseApp secondaryApp = await Firebase.initializeApp(
       name: 'AdminUserCreator',
       options: Firebase.app().options,
@@ -154,7 +155,7 @@ class AuthService {
       }
       return null;
     } finally {
-      // Always delete the secondary app to clean up resources
+      // delete secondary app to clean up
       await secondaryApp.delete();
     }
   }
