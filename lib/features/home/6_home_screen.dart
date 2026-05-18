@@ -1,4 +1,4 @@
-// main home page where you choose your mood and see affirmations
+// [FLOW STEP 6] 6_home_screen.dart - Home Dashboard: Choose mood, read daily affirmations, view features, or logout
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ import 'package:moodwalls/core/firestore_service.dart';
 import 'package:moodwalls/features/mood/mood_card.dart';
 import 'package:moodwalls/features/mood/mood_scaffold_background.dart';
 import 'package:moodwalls/features/wallpaper/favorites_screen.dart';
-import 'package:moodwalls/features/admin/admin_dashboard.dart';
+import 'package:moodwalls/features/admin/9_admin_dashboard.dart';
 import 'package:moodwalls/features/mood/affirmation_service.dart';
 import 'package:moodwalls/features/home/mood_feed_screen.dart';
 
@@ -35,8 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
   }
-
-
 
   Future<void> _onMoodTap(BuildContext context, String moodTitle, String? uid) async {
     if (!context.mounted) return;
@@ -113,7 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       tooltip: 'Community Feed',
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MoodFeedScreen())),
                     ),
-
                     IconButton(
                       icon: const Icon(Icons.favorite_border, color: Colors.black87),
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FavoritesScreen())),
@@ -151,13 +148,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 28,
                               ),
                         ),
-                         const SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         const Text(
                           'How are you feeling today?',
                           style: TextStyle(fontSize: 16, color: Colors.black54),
                         ),
                         const SizedBox(height: 20),
-                        // affirmation card
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(20),

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
 import 'package:moodwalls/core/firestore_service.dart';
 import 'package:moodwalls/features/wallpaper/wallpaper_model.dart';
-import 'package:moodwalls/features/wallpaper/preview_screen.dart';
+import 'package:moodwalls/features/wallpaper/8_preview_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});

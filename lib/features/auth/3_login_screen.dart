@@ -1,4 +1,4 @@
-// page where normal users can log in using email or google
+// [FLOW STEP 3] 3_login_screen.dart - User Login: Portal for normal users to sign in using Email or Google
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
@@ -77,8 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
   }
-
-
 
   void _signInWithGoogle() async {
     setState(() {
@@ -274,10 +272,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: 'Sign In with Google',
                     onPressed: _isLoading ? () {} : _signInWithGoogle,
                     isLoading: _isGoogleLoading,
-
                   ),
-                  const SizedBox(height: 16),
-
                   const SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

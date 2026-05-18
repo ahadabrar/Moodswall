@@ -1,4 +1,4 @@
-// full screen preview of a wallpaper with download and favorite buttons
+// [FLOW STEP 8] 8_preview_screen.dart - Wallpaper Preview: Fullscreen preview with options to save locally or favorite
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:provider/provider.dart';
@@ -85,14 +85,12 @@ class _PreviewScreenState extends State<PreviewScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
                 _buildActionButton(
                   context,
                   icon: Icons.download,
                   label: 'Save',
                   onTap: () => _downloadWallpaper(context),
                 ),
-
                 Consumer<AuthProvider>(
                   builder: (context, authProvider, child) {
                     final isFav = authProvider.userModel?.favorites.contains(widget.wallpaper.id) ?? false;

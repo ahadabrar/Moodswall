@@ -1,4 +1,4 @@
-// screen where new users can register their account
+// [FLOW STEP 5] 5_signup_screen.dart - User Registration: Register a new normal user account
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';

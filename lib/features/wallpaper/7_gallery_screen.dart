@@ -1,4 +1,4 @@
-// shows available wallpapers for the selected mood
+// [FLOW STEP 7] 7_gallery_screen.dart - Wallpaper Gallery: Shows a curated list of wallpapers based on selected mood
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -9,7 +9,7 @@ import 'package:moodwalls/features/wallpaper/wallpaper_provider.dart';
 import '../../config/theme.dart';
 import 'package:moodwalls/features/mood/mood_scaffold_background.dart';
 import 'package:moodwalls/features/wallpaper/wallpaper_model.dart';
-import 'package:moodwalls/features/wallpaper/preview_screen.dart';
+import 'package:moodwalls/features/wallpaper/8_preview_screen.dart';
 
 class GalleryScreen extends StatefulWidget {
   final String mood;
@@ -128,8 +128,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
       ),
     );
   }
-
-
 
   Widget _buildWallpaperCard(BuildContext context, WallpaperModel wallpaper, int index) {
     return Hero(

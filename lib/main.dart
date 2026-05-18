@@ -1,4 +1,4 @@
-// this is the main entry point where the app starts up and loads all providers
+// [FLOW STEP 1] main.dart - Entry Point: Where the app initializes Firebase & loads state Providers
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -8,15 +8,15 @@ import 'package:moodwalls/firebase_options.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
 import 'package:moodwalls/features/mood/mood_theme_provider.dart';
 import 'package:moodwalls/features/wallpaper/wallpaper_provider.dart';
-import 'package:moodwalls/features/home/splash_screen.dart';
-import 'package:moodwalls/features/auth/login_screen.dart';
-import 'package:moodwalls/features/auth/signup_screen.dart';
-import 'package:moodwalls/features/home/home_screen.dart';
-import 'package:moodwalls/features/auth/role_selection_screen.dart';
-import 'package:moodwalls/features/auth/admin_login_screen.dart';
-import 'package:moodwalls/features/wallpaper/gallery_screen.dart';
+import 'package:moodwalls/features/home/1_splash_screen.dart';
+import 'package:moodwalls/features/auth/3_login_screen.dart';
+import 'package:moodwalls/features/auth/5_signup_screen.dart';
+import 'package:moodwalls/features/home/6_home_screen.dart';
+import 'package:moodwalls/features/auth/2_role_selection_screen.dart';
+import 'package:moodwalls/features/auth/4_admin_login_screen.dart';
+import 'package:moodwalls/features/wallpaper/7_gallery_screen.dart';
 import 'package:moodwalls/features/wallpaper/my_mood_wallpapers_screen.dart';
-import 'package:moodwalls/features/admin/admin_dashboard.dart';
+import 'package:moodwalls/features/admin/9_admin_dashboard.dart';
 import 'package:moodwalls/features/profile/profile_screen.dart';
 import 'package:moodwalls/features/mood/mood_history_screen.dart';
 

@@ -1,4 +1,4 @@
-// opening screen that routes the user based on login state
+// [FLOW STEP 1] 1_splash_screen.dart - Splash Screen: Displays branding and determines login routing
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
@@ -21,7 +21,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _checkAuthAndNavigate() {
-
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     if (authProvider.user != null) {
       Navigator.pushReplacementNamed(context, '/home');
@@ -38,7 +37,6 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Icon(
               Icons.wallpaper_rounded,
               size: 100,

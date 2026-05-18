@@ -1,4 +1,4 @@
-// simple screen to choose whether to log in as user or admin
+// [FLOW STEP 2] 2_role_selection_screen.dart - Role Selection: Choose between User Login or Admin Login
 import 'package:flutter/material.dart';
 
 class RoleSelectionScreen extends StatelessWidget {

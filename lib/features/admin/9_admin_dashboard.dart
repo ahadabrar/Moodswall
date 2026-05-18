@@ -1,4 +1,4 @@
-// screen for admins to manage users and delete them from the app
+// [FLOW STEP 9] 9_admin_dashboard.dart - Admin Dashboard: Secure control panel for administrator account user management
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:moodwalls/features/auth/auth_provider.dart';
@@ -73,7 +73,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
       }
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -152,11 +151,11 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                               subtitle: Text('$email\n${isAdmin ? 'Admin' : 'User'}'),
                               isThreeLine: true,
                               trailing: isAdmin
-                                  ? null
-                                  : IconButton(
-                                      icon: const Icon(Icons.delete, color: Colors.red),
-                                      onPressed: () => _deleteUser(user['uid']),
-                                    ),
+                                    ? null
+                                    : IconButton(
+                                        icon: const Icon(Icons.delete, color: Colors.red),
+                                        onPressed: () => _deleteUser(user['uid']),
+                                      ),
                             ),
                           );
                         },
